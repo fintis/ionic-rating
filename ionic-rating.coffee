@@ -6,7 +6,7 @@ angular.module 'ionic.rating', []
     stateOff: null
 }
 
-.controller 'RatingController', ($scope, $attrs, ratingConfig) ->
+.controller 'RatingController', ['$scope', '$attrs', 'ratingConfig', ($scope, $attrs, ratingConfig) ->
     ngModelCtrl = { $setViewValue: angular.noop }
 
     this.init = (ngModelCtrl_) ->
@@ -58,7 +58,7 @@ angular.module 'ionic.rating', []
         $scope.value = ngModelCtrl.$viewValue
 
     return this
-
+]
 .directive 'rating', ->
     return {
         restrict: 'EA'
